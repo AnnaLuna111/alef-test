@@ -3,7 +3,7 @@
     <!-- Header -->
     <header class="d-center">
       <router-link ro="/">
-        <img src="@/assets/logo.svg" alt="">
+        <img src="@/assets/logo.svg" alt="" @click="clearLocalStorage">
       </router-link>
       <nav>
         <router-link to="/" :class="{ active: $route.name === 'FormPage' }">
@@ -28,7 +28,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    clearLocalStorage() {
+      localStorage.removeItem('formData');
+      localStorage.removeItem('lastUpdated');
+
+      this.$router.push('/');
+    },
+  },
+};
 </script>
 
 <style>

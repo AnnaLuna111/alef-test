@@ -1,5 +1,5 @@
 <template>
-  <div class="d-column gap20">
+  <div class="page d-column gap20">
     <h1>Персональные данные</h1>
     <form @submit.prevent="handleSubmit" class="d-column gap30">
       <UserForm :user="user" :children="children" />
@@ -49,9 +49,12 @@ export default {
 </script>
 
 <style scoped>
+.page {
+  width: 100%;
+  min-width: 616px;
+}
 .form {
-  min-width: 100%;
-  max-width: 616px;
+  width: 100%;
 }
 
 h1 {
